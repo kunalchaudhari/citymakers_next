@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing City Makers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Description</th>
+      <th>Mobile</th>
+      <th>Landline</th>
+      <th>Address1</th>
+      <th>Address2</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Country</th>
+      <th>Location</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @city_makers.each do |city_maker| %>
+      <tr>
+        <td><%= city_maker.name %></td>
+        <td><%= city_maker.email %></td>
+        <td><%= city_maker.description %></td>
+        <td><%= city_maker.mobile %></td>
+        <td><%= city_maker.landline %></td>
+        <td><%= city_maker.address1 %></td>
+        <td><%= city_maker.address2 %></td>
+        <td><%= city_maker.city %></td>
+        <td><%= city_maker.state %></td>
+        <td><%= city_maker.country %></td>
+        <td><%= city_maker.location_xy %></td>
+        <td><%= link_to 'Show', city_maker %></td>
+        <td><%= link_to 'Edit', edit_city_maker_path(city_maker) %></td>
+        <td><%= link_to 'Destroy', city_maker, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New City maker', new_city_maker_path %>
